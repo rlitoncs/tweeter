@@ -24,3 +24,8 @@ main .tweet-submission .tweet-submit {
   color: #FFFFFF;
   padding: 5px 10px 5px 10px;
 }
+
+main .tweet-submit:hover{
+  background: #4f64a9;
+  cursor: pointer;
+}
