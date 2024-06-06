@@ -8,6 +8,9 @@ main .tweet-input{
 /* Styling of actual textarea box */
 main #tweet-text {
   margin: 10px 0 10px 0;
+  background: transparent;
+  border: 0 none;
+  height: 50px;
 }
 
 /* Styling for button and counter */
