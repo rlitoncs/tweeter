@@ -24,7 +24,7 @@ body {
 
 main {
   width: 90%;
-  text-align: center;
+  margin: 0 auto; /* center main element*/ 
   background-color: inherit;
 }
 
