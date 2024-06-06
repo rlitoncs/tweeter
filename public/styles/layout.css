@@ -25,6 +25,7 @@ body {
 main {
   width: 90%;
   text-align: center;
+  background-color: inherit;
 }
 
 /*
