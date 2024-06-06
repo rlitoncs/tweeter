@@ -1,24 +1,21 @@
 nav {
   height: 120px;
-  width: 100vw;
+  width: 100%;
   background: #4056A1;
-  color: #FFFFFF
-}
-
-nav {
+  color: #FFFFFF;
   display:flex;
   justify-content: space-between;
   align-items: center;
+  
 }
 
-nav span.tweeter-logo {
-  font-family: "Bungee", sans-serif;
+nav span {
   margin: 0 1.5em 0 1.5em;
+  font-family: "Bungee", sans-serif;
 }
 
 nav .new-tweet{
   display:flex;
   flex-direction: column;
   align-items: center;
-  margin: 0 1.5em 0 1.5em;
 }
