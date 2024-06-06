@@ -22,12 +22,29 @@ body {
   padding-top: 120px;
 }
 
-main {
+/*
+ * Additional CSS can be defined below or in other CSS files, as per instructions
+ */
+
+ main {
   width: 90%;
   margin: 0 auto; /* center main element*/ 
   background-color: inherit;
 }
 
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
+main hr {
+  border-bottom: solid 3px #545149;
+}
+
+main div button {
+  background: #4056A1;
+  color: #FFFFFF;
+  padding: 5px 10px 5px 10px;
+}
+
+main div {
+  display:flex;
+  justify-content: space-between;
+  font-family: "Bungee", sans-serif;
+  font-size: 20px;
+}
