@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-  const maxCharacterCount =  $(".counter").val(); 
+  const maxCharacterCount =  $(".counter").text(); 
 
   // Event Handler for textarea
   $("#tweet-text").on("input", function(e) {
@@ -17,7 +17,7 @@ $(document).ready(function() {
     }
 
     // Update the counter based on user input
-    counter.val(remainingChars);
+    counter.text(remainingChars);
 
   })
 
