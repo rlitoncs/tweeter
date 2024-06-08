@@ -27,6 +27,9 @@
     <!-- Main CSS-->
     <link rel = "stylesheet" href="/styles/new-tweet.css" type="text/css"  />
 
+    <!-- Tweet CSS -->
+     <link rel = "stylesheet" href="/styles/tweet.css" type="text/css" />
+     
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
@@ -48,7 +51,7 @@
       </div>
     </nav>
 
-    <header>
+    <header class="user-header">
       <div>
         <img src="/images/profile-hex.png">
       </div>
@@ -73,6 +76,35 @@
             <output name="counter" class="counter" for="tweet-text">140</output>
           </div>
         </form>
+        
+        <section class="all-tweets">
+          <article class="tweet">
+            <header>
+              <div class="user">
+                <i class="fa-solid fa-user"></i>
+                <span class="user-name">Newton</span>
+              </div>
+              <div class="user-id">@SirIssac</div>
+            </header>
+
+            <div class="user-tweet"> 
+              If I have seen further, it is by standing on a shoulder of giants   
+            </div>
+
+            <footer> 
+              <div class="date-posted">10 days ago</div> 
+              <div class="icons">
+                <i class="fa-solid fa-flag"></i>
+                <i class="fa-solid fa-retweet"></i>
+                <i class="fa-solid fa-heart"></i>
+              </div>
+            </footer>
+          </article>
+
+
+        </section>
+
+
       </section>
 
     </main>
