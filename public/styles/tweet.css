@@ -31,7 +31,7 @@ article.tweet .user-id{
 }
 
 /* Tweet message */
-article.tweet .user-tweet{
+article.tweet .tweet-content{
   padding: 40px 0 40px 0;
   border-bottom: 4px solid #545149; /*this might be cssing a <hr> tag since in screen shot the width of line is longer*/
 }
@@ -53,8 +53,8 @@ article.tweet .icons{
   cursor: pointer;
 }
 
-.fa-retweet {
-  margin: 0 15px 0 15px;
+article.tweet .icons i{
+  margin: 0 10px 0 10px;
 }
 
 .fa-flag:hover, .fa-retweet:hover, .fa-heart:hover {
