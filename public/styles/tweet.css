@@ -33,7 +33,7 @@ article.tweet .user-id{
 /* Tweet message */
 article.tweet .tweet-content{
   padding: 40px 0 40px 0;
-  border-bottom: 4px solid #545149; /*this might be cssing a <hr> tag since in screen shot the width of line is longer*/
+  border-bottom: 4px solid #545149;
 }
 
 /* Footer */
