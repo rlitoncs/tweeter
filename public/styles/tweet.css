@@ -60,3 +60,8 @@ article.tweet .icons i{
 .fa-flag:hover, .fa-retweet:hover, .fa-heart:hover {
   color: orange;
 }
+
+/* Tweet Content */
+.tweet-content{
+  word-wrap: break-word;
+}
