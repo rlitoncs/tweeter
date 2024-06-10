@@ -5,6 +5,10 @@
  */
 
 $(() => {
+  //Clear textarea on refresh
+  $(window).on('beforeunload', () => {
+    $('textarea#tweet-text').val('');
+  }) 
 
   const $form = $('#new-tweet-message');
 
@@ -63,6 +67,15 @@ $(() => {
     })
   }
 
+  const clearTweetContent = () => {
+    return $('textarea#tweet-text').val('');
+  }
+  
+  const clearTweetCounter = () => {
+    $('.counter').text('140');
+  }
+
+
   //Event Handler for form submission
   $form.on('submit', (event) => {
     event.preventDefault();
@@ -86,8 +99,9 @@ $(() => {
       data: data,
     })
     .done(() => {
-      console.log('tweet POST was a success')
-      loadTweets();
+      clearTweetContent(); // clear textarea on tweet submission
+      clearTweetCounter(); // reset tweet character count on tweet submission
+      loadTweets(); //loadTweets after successful POST
     })
     .fail((err) => {
       console.log("Error: ", err)
