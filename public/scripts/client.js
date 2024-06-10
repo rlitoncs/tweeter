@@ -75,12 +75,12 @@ $(() => {
     })
     .done(() => {
       console.log('tweet POST was a success')
+      loadTweets();
     })
     .fail((err) => {
       console.log("Error: ", err)
     })
   });
-
 
   loadTweets();
 })
