@@ -10,6 +10,7 @@ main #tweet-text {
   margin: 10px 0 10px 0;
   background: transparent;
   border: 0 none;
+  outline: none;
   height: 50px;
 }
 
