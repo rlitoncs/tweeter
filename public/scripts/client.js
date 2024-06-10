@@ -31,6 +31,7 @@ $(() => {
       "created_at": 1461113959088
     }
   ]
+  const $form = $('#new-tweet-message');
 
   const renderTweet = (tweets) => {
     for (const tweet of tweets){
@@ -38,7 +39,7 @@ $(() => {
       $('#tweets-container').prepend($tweet); 
     }
   }
-  
+
   const createTweetElement = (tweet) => {
     const days = Math.floor(tweet.created_at / 86400000);
     
@@ -71,4 +72,23 @@ $(() => {
   }
 
   renderTweet(data);
+
+  //Event Handler for form submission
+  $form.on('submit', (event) => {
+    event.preventDefault();
+    const data = $form.serialize(); //creates text string in URL-encoded notation
+
+    //POST the Data to the server
+    $.ajax({
+      method: 'POST',
+      url: '/tweets',
+      data: data,
+      success: () => {
+        console.log('tweet POST was a success'); 
+      },
+      error: (err) => {
+        console.log(err);
+      }
+    })
+  });
 })
