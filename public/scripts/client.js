@@ -16,7 +16,8 @@ $(() => {
   }
 
   const createTweetElement = (tweet) => {
-    const days = Math.floor(tweet.created_at / 86400000);
+    // uses CDN version of timeago library 
+    const timeAgo = timeago.format(tweet.created_at);
     
     const $tweetMsg = $(`
        <article class="tweet">
@@ -33,7 +34,7 @@ $(() => {
           </div>
 
           <footer> 
-            <div class="date-posted">${days} days</div> 
+            <div class="date-posted">${timeAgo} </div> 
             <div class="icons">
               <i class="fa-solid fa-flag"></i>
               <i class="fa-solid fa-retweet"></i>
@@ -51,13 +52,13 @@ $(() => {
     $.ajax({
       method: 'GET',
       url: '/tweets',
-      success: (tweets) => {
-        console.log(tweets); 
-        renderTweet(tweets);
-      },
-      error: (err) => {
-        console.log(err);
-      }
+    })
+    .done((tweets) => {
+      console.log(tweets);
+      renderTweet(tweets);
+    })
+    .fail((err) => {
+      console.log(err);
     })
   }
 
@@ -71,13 +72,12 @@ $(() => {
       method: 'POST',
       url: '/tweets',
       data: data,
-      success: () => {
-        console.log('tweet POST was a success'); 
-        loadTweets();
-      },
-      error: (err) => {
-        console.log(err);
-      }
+    })
+    .done(() => {
+      console.log('tweet POST was a success')
+    })
+    .fail((err) => {
+      console.log("Error: ", err)
     })
   });
 
