@@ -6,31 +6,6 @@
 
 $(() => {
 
-  // Test / driver code (temporary). Eventually will get this from the server.
-  const data = [
-    {
-      "user": {
-        "name": "Newton",
-        "avatars": "https://i.imgur.com/73hZDYK.png"
-        ,
-        "handle": "@SirIsaac"
-      },
-      "content": {
-        "text": "If I have seen further it is by standing on the shoulders of giants"
-      },
-      "created_at": 1461116232227
-    },
-    {
-      "user": {
-        "name": "Descartes",
-        "avatars": "https://i.imgur.com/nlhLi3I.png",
-        "handle": "@rd" },
-      "content": {
-        "text": "Je pense , donc je suis"
-      },
-      "created_at": 1461113959088
-    }
-  ]
   const $form = $('#new-tweet-message');
 
   const renderTweet = (tweets) => {
@@ -71,24 +46,41 @@ $(() => {
       return $tweetMsg;
   }
 
-  renderTweet(data);
+  //Load incoming tweets
+  const loadTweets = () => {
+    $.ajax({
+      method: 'GET',
+      url: '/tweets',
+      success: (tweets) => {
+        console.log(tweets); 
+        renderTweet(tweets);
+      },
+      error: (err) => {
+        console.log(err);
+      }
+    })
+  }
 
   //Event Handler for form submission
   $form.on('submit', (event) => {
     event.preventDefault();
     const data = $form.serialize(); //creates text string in URL-encoded notation
 
-    //POST the Data to the server
+    //POST the Data to the server (converts data to JSON)
     $.ajax({
       method: 'POST',
       url: '/tweets',
       data: data,
       success: () => {
         console.log('tweet POST was a success'); 
+        loadTweets();
       },
       error: (err) => {
         console.log(err);
       }
     })
   });
+
+
+  loadTweets();
 })
