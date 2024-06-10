@@ -65,6 +65,16 @@ $(() => {
   //Event Handler for form submission
   $form.on('submit', (event) => {
     event.preventDefault();
+
+    const $tweetContent = $('textarea#tweet-text');
+
+    if (!$tweetContent.val() || $tweetContent.val() === "\n" ){
+      alert('Error: Empty Text');
+    } else if ($tweetContent.val().length > 140) {
+      alert('Error: Exceeds max characters');
+    }
+
+
     const data = $form.serialize(); //creates text string in URL-encoded notation
 
     //POST the Data to the server (converts data to JSON)
