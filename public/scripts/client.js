@@ -89,32 +89,32 @@ $(() => {
     event.preventDefault();
 
     // Slide Up the error message on submit
-    $('#tweet-error').slideUp( ()=> {
-      $('#tweet-error').empty();
+    $('#tweet-error-message').slideUp( ()=> {
+      $('#tweet-error-message').empty();
     });
 
     const $tweetContent = $('textarea#tweet-text').val().trim();
 
     // error: empty input
     if (!$tweetContent){
-      $('#tweet-error').slideDown('slow', () => {
+      $('#tweet-error-message').slideDown('slow', () => {
         const $tweetErrorMsg = $(`
           <i class='fas fa-exclamation-circle'> </i>
           <span> Error: No Characters Entered! </span>
         `)
-        $('#tweet-error').append($tweetErrorMsg).css('display', 'block');
+        $('#tweet-error-message').append($tweetErrorMsg).css('display', 'block');
       })
       return;
     } 
 
     // error: exceeded max characters
     else if ($tweetContent.length > 140) {
-      $('#tweet-error').slideDown('slow', () => {
+      $('#tweet-error-message').slideDown('slow', () => {
         const $tweetErrorMsg = $(`
           <i class='fas fa-exclamation-circle'> </i>
           <span> Error: Max Characters Exceeded! </span>
         `)
-        $('#tweet-error').append($tweetErrorMsg).css('display', 'block');
+        $('#tweet-error-message').append($tweetErrorMsg).css('display', 'block');
       });
       return;
     }
