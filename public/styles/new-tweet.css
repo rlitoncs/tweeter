@@ -1,9 +1,9 @@
 /*Error Message*/
 main #tweet-error {
   border: solid 5px red; 
-  padding: 10px;
+  padding: 20px;
   color: red;
-  margin-bottom: 15px;
+  margin-bottom: 30px;
   display: none;
 }
 
