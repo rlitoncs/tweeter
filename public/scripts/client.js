@@ -20,9 +20,17 @@ $(() => {
     }
   }
 
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+   
   const createTweetElement = (tweet) => {
     // uses CDN version of timeago library 
     const timeAgo = timeago.format(tweet.created_at);
+
+    
     
     const $tweetMsg = $(`
        <article class="tweet">
@@ -35,7 +43,7 @@ $(() => {
           </header>
 
           <div class="tweet-content"> 
-            ${tweet.content.text}   
+            ${escape(tweet.content.text)}   
           </div>
 
           <footer> 
@@ -75,18 +83,41 @@ $(() => {
     $('.counter').text('140');
   }
 
+  const errorMsgSlideUp = () => {
+    $('#tweet-error').slideUp("slow", function () {
+    });
+    $('#tweet-error').empty();
+  }
+
+  const errorMsgSlideDown = () => {
+    $('#tweet-error').slideDown("slow", () => {
+      $('#tweet-error').css('display', 'block');
+    })
+  }
 
   //Event Handler for form submission
   $form.on('submit', (event) => {
     event.preventDefault();
+    errorMsgSlideUp();
 
     const $tweetContent = $('textarea#tweet-text').val().trim();
 
+    // error handling
     if (!$tweetContent){
-      alert('Error: Empty Text');
+      const $tweetErrorMsg = $(`
+        <i class='fas fa-exclamation-circle'> </i>
+        <span> Error: No Characters Entered! </span>
+      `)
+      $('#tweet-error').append($tweetErrorMsg);
+      errorMsgSlideDown();
       return;
     } else if ($tweetContent.length > 140) {
-      alert('Error: Exceeds max characters');
+      const $tweetErrorMsg = $(`
+        <i class='fas fa-exclamation-circle'> </i>
+        <span> Error: Max Characters Exceeded! </span>
+      `)
+      $('#tweet-error').append($tweetErrorMsg);
+      errorMsgSlideDown();
       return;
     }
 
