@@ -68,8 +68,13 @@
 
     <!-- Page-specific (main) content here -->
     <main class="container">
+      
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
+        
+        <!-- error handling -->
+         <section id="tweet-error"></section>
+        
         <form id="new-tweet-message" method="POST" action="/tweets">
           <div class="tweet-input">
             <label for="tweet-text">What are you humming about?</label>
