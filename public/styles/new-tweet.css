@@ -1,3 +1,14 @@
+/*Error Message*/
+main #tweet-error {
+  border: solid 5px red; 
+  padding: 10px;
+  color: red;
+  margin-bottom: 15px;
+  display: none;
+}
+
+
+
 /* User input into textarea box */
 main .tweet-input{
   display:flex;
