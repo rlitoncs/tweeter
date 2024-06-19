@@ -31,3 +31,9 @@ body {
   margin: 0 auto; /* center main element*/ 
   background-color: inherit;
 }
+
+@media screen and (min-width: 1024px) {
+  main.container{
+    padding: 50px 100px;
+  }
+}

@@ -8,5 +8,21 @@ header.user-header{
   background-color: #cc8800;
   background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png");
   /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+
+  & h2 {
+    margin: 0;
+  }
 }
 
+/* Desktop */
+@media screen and (min-width: 1024px) {
+   
+  .full-content-container{
+    display: flex;
+  }
+
+  header.user-header{
+    width: 35%;
+    margin: 100px 100px 0px 100px
+  }
+}
