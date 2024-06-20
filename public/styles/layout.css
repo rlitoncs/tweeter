@@ -20,6 +20,8 @@ body {
   font-size: 24px;
   font-family: 'Source Sans 3', sans-serif;
   padding-top: 120px;
+  display:flex;
+  flex-direction: column;
 }
 
 /*
@@ -33,6 +35,9 @@ body {
 }
 
 @media screen and (min-width: 1024px) {
+  body{
+    flex-direction: row;
+  }
   main.container{
     padding: 50px 100px;
   }
