@@ -3,9 +3,6 @@ article.tweet {
   border: solid 2px #545149;
   margin-top: 50px;
   padding: 25px;
-  display: flex;
-  flex-direction: column;
-  align-content: space-between;
 }
 
 article.tweet:hover {
@@ -19,11 +16,7 @@ article.tweet header {
   padding: 5px 0px 5px 0px;
 }
 
-article.tweet .user {
-  margin-left: 10px;
-}
-
-article.tweet .user-name {
+article.tweet .user, .user-name {
   margin-left: 10px;
 }
 
