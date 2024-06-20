@@ -1,3 +1,5 @@
+@import '../public/partials/_variables.scss';
+
 @mixin align-nav{
   display:flex;
   justify-content: space-between;
@@ -13,7 +15,7 @@
 nav {
   height: 120px;
   width: 100%;
-  background-color: #cc8800;
+  background-color: $bg-color-mobile;
   background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png");
   color: #FFFFFF;
   position: fixed;
@@ -38,7 +40,7 @@ nav {
 /* Desktop */
 @media screen and (min-width: 1024px) {
   nav {
-    background-color: #4056A1;
+    background-color: $bg-color-desktop;
     background-image: none;
   }
 }
