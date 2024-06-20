@@ -9,10 +9,10 @@ nav {
   align-items: center;
   position: fixed;
   top: 0px;
+  padding: 0 1.5em; /* top-bottom, left-right*/
 }
 
-nav span {
-  margin: 0 1.5em 0 1.5em;
+nav .nav-logo {
   font-family: "Bungee", sans-serif;
 }
 
@@ -20,6 +20,10 @@ nav .new-tweet{
   display:flex;
   flex-direction: column;
   align-items: center;
+}
+
+nav .new-tweet i {
+  color: tomato;
 }
 
 /* Desktop */
