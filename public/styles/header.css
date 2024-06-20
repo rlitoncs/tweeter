@@ -16,11 +16,6 @@ header.user-header{
 
 /* Desktop */
 @media screen and (min-width: 1024px) {
-   
-  .full-content-container{
-    display: flex;
-  }
-
   header.user-header{
     width: 35%;
     margin: 100px 100px 0px 100px
