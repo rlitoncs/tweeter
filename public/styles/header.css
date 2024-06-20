@@ -1,23 +1,22 @@
-header.user-header{
-  width: 100%;
-  height:400px;
+header.user-header {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+  width: 100%;
+  height: 400px;
   background-color: #cc8800;
   background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png");
   /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
-
-  & h2 {
-    margin: 0;
-  }
+}
+header.user-header h2 {
+  margin: 0;
 }
 
 /* Desktop */
 @media screen and (min-width: 1024px) {
-  header.user-header{
+  header.user-header {
     width: 35%;
-    margin: 100px 100px 0px 100px
+    margin: 100px 100px 0px 100px;
   }
 }
