@@ -3,9 +3,11 @@ article.tweet {
   border: solid 2px #545149;
   margin-top: 50px;
   padding: 25px;
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
 }
-
-article.tweet:hover {
+article.tweet :hover {
   background-color: #f5f5f5;
 }
 
@@ -15,19 +17,18 @@ article.tweet header {
   justify-content: space-between;
   padding: 5px 0px 5px 0px;
 }
-
-article.tweet .user, .user-name {
+article.tweet header .user, article.tweet header .user-name {
   margin-left: 10px;
 }
-
-article.tweet .user-id {
+article.tweet header .user-id {
   color: #b5b5b5;
 }
 
-/* Tweet message */
+/* Tweet Message */
 article.tweet .tweet-content {
   padding: 40px 0 40px 0;
   border-bottom: 4px solid #545149;
+  word-wrap: break-word;
 }
 
 /* Footer */
@@ -36,26 +37,17 @@ article.tweet footer {
   justify-content: space-between;
   padding: 15px 15px 0px 15px;
 }
-
-article.tweet .date-posted {
+article.tweet footer .date-posted {
   font-size: 20px;
 }
-
-/* Bottom-right Icons  */
-article.tweet .icons {
+article.tweet footer .icons {
   color: #4056A1;
   cursor: pointer;
 }
-
-article.tweet .icons i {
+article.tweet footer .icons i {
   margin: 0 10px 0 10px;
 }
 
 .fa-flag:hover, .fa-retweet:hover, .fa-heart:hover {
   color: orange;
-}
-
-/* Tweet Content */
-.tweet-content {
-  word-wrap: break-word;
 }
