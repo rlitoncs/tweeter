@@ -4,24 +4,21 @@ nav {
   background-color: #cc8800;
   background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png");
   color: #FFFFFF;
-  display:flex;
-  justify-content: space-between;
-  align-items: center;
   position: fixed;
   top: 0px;
   padding: 0 1.5em; /* top-bottom, left-right*/
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-
 nav .nav-logo {
   font-family: "Bungee", sans-serif;
 }
-
-nav .new-tweet{
-  display:flex;
+nav .new-tweet {
+  display: flex;
   flex-direction: column;
   align-items: center;
 }
-
 nav .new-tweet i {
   color: tomato;
 }

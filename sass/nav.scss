@@ -1,26 +1,39 @@
+@mixin align-nav{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin align-new-tweet{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 nav {
   height: 120px;
   width: 100%;
   background-color: #cc8800;
   background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png");
   color: #FFFFFF;
-  display:flex;
-  justify-content: space-between;
-  align-items: center;
   position: fixed;
   top: 0px;
+  padding: 0 1.5em; /* top-bottom, left-right*/
+  @include align-nav();
+
+  .nav-logo {
+    font-family: "Bungee", sans-serif;
+  }
+
+  .new-tweet{
+    @include align-new-tweet();
+  }
+
+  .new-tweet i {
+    color: tomato;
+  }
 }
 
-nav span {
-  margin: 0 1.5em 0 1.5em;
-  font-family: "Bungee", sans-serif;
-}
-
-nav .new-tweet{
-  display:flex;
-  flex-direction: column;
-  align-items: center;
-}
 
 /* Desktop */
 @media screen and (min-width: 1024px) {
