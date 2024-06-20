@@ -7,22 +7,20 @@ main #tweet-error-message {
   display: none;
 }
 
-
-
 /* User input into textarea box */
 main .tweet-input{
   display:flex;
   flex-direction: column;
   border-bottom: solid 3px #545149;
-}
 
-/* Styling of actual textarea box */
-main #tweet-text {
-  margin: 10px 0 10px 0;
-  background: transparent;
-  border: 0 none;
-  outline: none;
-  height: 50px;
+  /* Styling of actual textarea box */
+  #tweet-text {
+    margin: 10px 0 10px 0;
+    background: transparent;
+    border: 0 none;
+    outline: none;
+    height: 50px;
+  }
 }
 
 /* Styling for button and counter */
@@ -32,15 +30,15 @@ main .tweet-submission {
   font-family: "Bungee", sans-serif;
   font-size: 20px;
   margin: 10px 0 0 0;
-}
 
-main .tweet-submission .tweet-submit {
-  background: #4056A1;
-  color: #FFFFFF;
-  padding: 5px 10px 5px 10px;
-}
+  .tweet-submit {
+    background: #4056A1;
+    color: #FFFFFF;
+    padding: 5px 10px 5px 10px;
+  }
 
-main .tweet-submit:hover{
-  background: #4f64a9;
-  cursor: pointer;
+  .tweet-submit:hover{
+    background: #4f64a9;
+    cursor: pointer;
+  }
 }

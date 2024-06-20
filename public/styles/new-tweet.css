@@ -1,23 +1,21 @@
 /*Error Message*/
 main #tweet-error-message {
-  border: solid 5px red; 
+  border: solid 5px red;
   padding: 20px;
   color: red;
   margin-bottom: 30px;
   display: none;
 }
 
-
-
 /* User input into textarea box */
-main .tweet-input{
-  display:flex;
+main .tweet-input {
+  display: flex;
   flex-direction: column;
   border-bottom: solid 3px #545149;
 }
 
 /* Styling of actual textarea box */
-main #tweet-text {
+main .tweet-input #tweet-text {
   margin: 10px 0 10px 0;
   background: transparent;
   border: 0 none;
@@ -27,20 +25,18 @@ main #tweet-text {
 
 /* Styling for button and counter */
 main .tweet-submission {
-  display:flex;
+  display: flex;
   justify-content: space-between;
   font-family: "Bungee", sans-serif;
   font-size: 20px;
   margin: 10px 0 0 0;
 }
-
 main .tweet-submission .tweet-submit {
   background: #4056A1;
   color: #FFFFFF;
   padding: 5px 10px 5px 10px;
 }
-
-main .tweet-submit:hover{
+main .tweet-submission .tweet-submit:hover {
   background: #4f64a9;
   cursor: pointer;
 }
