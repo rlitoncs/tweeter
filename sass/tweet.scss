@@ -1,3 +1,5 @@
+@import '../public/partials/_variables.scss';
+
 @mixin align-horizontal {
   display: flex;
   justify-content: space-between;
@@ -5,7 +7,7 @@
 
 /* Tweet Container */
 article.tweet{
-  border: solid 2px #545149;
+  border: solid 2px $font-body-color;
   margin-top: 50px;
   padding: 25px;
 
@@ -40,7 +42,7 @@ article.tweet{
     }
   
     .icons{
-      color: #4056A1;
+      color: $bg-color-desktop;
       cursor: pointer;
     }
   
@@ -56,5 +58,5 @@ article.tweet:hover{
 }
 
 .fa-flag:hover, .fa-retweet:hover, .fa-heart:hover {
-  color: orange;
+  color: $bg-color-mobile;
 }

@@ -47,5 +47,5 @@ article.tweet:hover {
 }
 
 .fa-flag:hover, .fa-retweet:hover, .fa-heart:hover {
-  color: orange;
+  color: #cc8800;
 }
