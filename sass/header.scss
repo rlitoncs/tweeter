@@ -11,7 +11,7 @@ header.user-header{
   @include align-header();
   width: 100%;
   height: 400px;
-  background-color: $bg-color-header;
+  background-color: $bg-color-mobile;
   background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png");
   /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 
