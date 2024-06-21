@@ -1,16 +1,27 @@
+@import '../public/partials/variables.scss';
+
+@mixin align-tweet-input {
+  display:flex;
+  flex-direction: column;
+}
+
+@mixin align-tweet-submission {
+  display:flex;
+  justify-content: space-between;
+}
+
 /*Error Message*/
 main #tweet-error-message {
-  border: solid 5px red; 
+  border: solid 5px $error-color; 
   padding: 20px;
-  color: red;
+  color: $error-color;
   margin-bottom: 30px;
   display: none;
 }
 
 /* User input into textarea box */
 main .tweet-input{
-  display:flex;
-  flex-direction: column;
+  @include align-tweet-input();
   border-bottom: solid 3px #545149;
 
   /* Styling of actual textarea box */
@@ -25,15 +36,14 @@ main .tweet-input{
 
 /* Styling for button and counter */
 main .tweet-submission {
-  display:flex;
-  justify-content: space-between;
-  font-family: "Bungee", sans-serif;
+  @include align-tweet-submission();
+  font-family: $font-family-2;
   font-size: 20px;
   margin: 10px 0 0 0;
 
   .tweet-submit {
-    background: #4056A1;
-    color: #FFFFFF;
+    background: $bg-color-desktop;
+    color: $font-nav-color;
     padding: 5px 10px 5px 10px;
   }
 
