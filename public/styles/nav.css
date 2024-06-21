@@ -21,6 +21,7 @@ nav .new-tweet {
 }
 nav .new-tweet i {
   color: tomato;
+  cursor: pointer;
 }
 
 /* Desktop */
