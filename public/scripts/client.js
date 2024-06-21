@@ -5,33 +5,52 @@
  */
 
 $(() => {
+//============================================================================
+// Event Handlers
+//============================================================================
   //Clear textarea on refresh
   $(window).on('beforeunload', () => {
     $('textarea#tweet-text').val('');
-  }) 
+  });
 
-  const $form = $('#new-tweet-message');
+  //Direct user to textarea upon clicking nav icon
+  $('nav .new-tweet i').on('click', (event) => {
+    $('#tweet-text').focus();
+  });
+  
+  //============================================================================
+  // Helper Functions
+  //============================================================================
+  const clearTweetContent = () => {
+    return $('textarea#tweet-text').val('');
+  };
+  
+  const clearTweetCounter = () => {
+    $('.counter').text('140');
+  };
 
-  const renderTweet = (tweets) => {
-    $('#tweets-container').empty();
-    for (const tweet of tweets){
-      const $tweet = createTweetElement(tweet);
-      $('#tweets-container').prepend($tweet); 
-    }
-  }
-
-  const escape = function (str) {
+  // Prevent user from cross-site scripting
+  const escape = function(str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
   };
+
+  //============================================================================
+  // Client Side JS
+  //============================================================================
+  const renderTweet = (tweets) => {
+    $('#tweets-container').empty();
+    for (const tweet of tweets) {
+      const $tweet = createTweetElement(tweet);
+      $('#tweets-container').prepend($tweet);
+    }
+  };
    
   const createTweetElement = (tweet) => {
-    // uses CDN version of timeago library 
+    // uses CDN version of timeago library
     const timeAgo = timeago.format(tweet.created_at);
 
-    
-    
     const $tweetMsg = $(`
        <article class="tweet">
           <header>
@@ -55,10 +74,10 @@ $(() => {
             </div>
           </footer>
         </article>
-      `)
+      `);
     
-      return $tweetMsg;
-  }
+    return $tweetMsg;
+  };
 
   //Load incoming tweets
   const loadTweets = () => {
@@ -66,46 +85,39 @@ $(() => {
       method: 'GET',
       url: '/tweets',
     })
-    .done((tweets) => {
-      console.log(tweets);
-      renderTweet(tweets);
-    })
-    .fail((err) => {
-      console.log(err);
-    })
-  }
-
-  const clearTweetContent = () => {
-    return $('textarea#tweet-text').val('');
-  }
-  
-  const clearTweetCounter = () => {
-    $('.counter').text('140');
-  }
-
+      .done((tweets) => {
+        console.log(tweets);
+        renderTweet(tweets);
+      })
+      .fail((err) => {
+        console.log(err);
+      });
+  };
 
   //Event Handler for form submission
+  const $form = $('#new-tweet-message');
+
   $form.on('submit', (event) => {
     event.preventDefault();
 
     // Slide Up the error message on submit
-    $('#tweet-error-message').slideUp( ()=> {
+    $('#tweet-error-message').slideUp(()=> {
       $('#tweet-error-message').empty();
     });
 
     const $tweetContent = $('textarea#tweet-text').val().trim();
 
     // error: empty input
-    if (!$tweetContent){
+    if (!$tweetContent) {
       $('#tweet-error-message').slideDown('slow', () => {
         const $tweetErrorMsg = $(`
           <i class='fas fa-exclamation-circle'> </i>
           <span> Error: No Characters Entered! </span>
-        `)
+        `);
         $('#tweet-error-message').append($tweetErrorMsg).css('display', 'block');
-      })
+      });
       return;
-    } 
+    }
 
     // error: exceeded max characters
     else if ($tweetContent.length > 140) {
@@ -113,7 +125,7 @@ $(() => {
         const $tweetErrorMsg = $(`
           <i class='fas fa-exclamation-circle'> </i>
           <span> Error: Max Characters Exceeded! </span>
-        `)
+        `);
         $('#tweet-error-message').append($tweetErrorMsg).css('display', 'block');
       });
       return;
@@ -127,15 +139,15 @@ $(() => {
       url: '/tweets',
       data: data,
     })
-    .done(() => {
-      clearTweetContent(); // clear textarea on tweet submission
-      clearTweetCounter(); // reset tweet character count on tweet submission
-      loadTweets(); //loadTweets after successful POST
-    })
-    .fail((err) => {
-      console.log("Error: ", err)
-    })
+      .done(() => {
+        clearTweetContent(); // clear textarea on tweet submission
+        clearTweetCounter(); // reset tweet character count on tweet submission
+        loadTweets(); //loadTweets after successful POST
+      })
+      .fail((err) => {
+        console.log("Error: ", err);
+      });
   });
 
   loadTweets();
-})
+});
