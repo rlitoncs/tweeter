@@ -36,7 +36,7 @@ $(() => {
   };
   
   const resetTweetCounter = () => {
-    $('.counter').text('140');
+    return $('.counter').text('140');
   };
 
   // Prevent user from cross-site scripting
