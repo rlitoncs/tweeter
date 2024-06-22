@@ -4,6 +4,18 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+/**
+ * newTweetEventHandler($targetElem) function handles the new tweet event for incoming element targets
+ * @param {String} $targetElem
+ * 
+ * clearTweetContent() function clears textarea upon submission
+ * 
+ * resetTweetCounter() function resets the counter
+ * 
+ * escape(str) function handles cross-site scripting on user-input
+ * @param {String} str - the tweet content
+ */
+
 $(() => {
   
   //============================================================================
@@ -27,7 +39,6 @@ $(() => {
         $form.slideDown();
         $('#tweet-text').focus();
       }
-      $('nav .second-toggle-btn').hide();
     });
   };
   
