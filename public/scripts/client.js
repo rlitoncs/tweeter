@@ -5,22 +5,28 @@
  */
 
 $(() => {
-//============================================================================
-// Event Handlers
-//============================================================================
-  //Clear textarea on refresh
-  $(window).on('beforeunload', () => {
-    $('textarea#tweet-text').val('');
-  });
-
-  //Direct user to textarea upon clicking nav icon
-  $('nav .new-tweet i').on('click', (event) => {
-    $('#tweet-text').focus();
-  });
   
   //============================================================================
   // Helper Functions
   //============================================================================
+  
+  //Direct user to textarea upon clicking 'new' btn or nav icon
+  //Slide new-tweet up or down upon click
+  const newTweetEventHandler = ($targetElem) => {
+    let $clicked = true;
+    $($targetElem).on('click', (event) => {
+      if ($clicked){
+        $clicked = false;
+        $('main.container .new-tweet').slideDown();
+        $('#tweet-text').focus();
+      } else if (!$clicked) {
+        $clicked = true;
+        $('main.container .new-tweet').slideUp();
+        $('#tweet-text').focus();
+      }
+    })
+  }
+  
   const clearTweetContent = () => {
     return $('textarea#tweet-text').val('');
   };
@@ -35,6 +41,19 @@ $(() => {
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
   };
+
+  //============================================================================
+  // Event Handlers
+  //============================================================================
+  //Clear textarea on refresh
+  $(window).on('beforeunload', () => {
+    $('textarea#tweet-text').val('');
+  });
+
+  //Direct user to textarea upon clicking 'new' btn or nav icon
+  //Slide new-tweet up or down upon click
+  newTweetEventHandler('nav .new-tweet .new-tweet-btn'); 
+  newTweetEventHandler('nav .new-tweet i'); 
 
   //============================================================================
   // Client Side JS
