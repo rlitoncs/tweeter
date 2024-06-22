@@ -1,3 +1,7 @@
+main.container .new-tweet {
+  display: none;
+}
+
 /*Error Message*/
 main #tweet-error-message {
   border: solid 5px red;
@@ -12,9 +16,8 @@ main .tweet-input {
   display: flex;
   flex-direction: column;
   border-bottom: solid 3px #545149;
+  /* Styling of actual textarea box */
 }
-
-/* Styling of actual textarea box */
 main .tweet-input #tweet-text {
   margin: 10px 0 10px 0;
   background: transparent;
