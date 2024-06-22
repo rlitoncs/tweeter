@@ -30,4 +30,5 @@ Tweeter is a simple, single-page Twitter clone built with front-end skills of: H
 - Alternatively, you can click on `red-down-arrow` located at the top-right to start a new tweet!
 
 ## Stretch
+- Composing a Tweet Box can be toggled by clicking the `new` or `red-down-arrow` located on the top right
 - Added SASS as an extension to help write more organized and reusable code 
