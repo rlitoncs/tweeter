@@ -25,7 +25,7 @@ Tweeter is a simple, single-page Twitter clone built with front-end skills of: H
 
 ### Compose Tweet
 - Click on `Start your Tweet`
-- Type anything you would to `hum` about
+- Type anything you would like to `hum` about
 - Click on `TWEET` and see your tweet unfold on the page
 - Alternatively, you can click on `red-down-arrow` located at the top-right to start a new tweet!
 
