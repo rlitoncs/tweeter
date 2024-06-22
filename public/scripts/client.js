@@ -19,7 +19,7 @@ $(() => {
         $('html').scrollTop(0);
         $form.slideDown();
         $('#tweet-text').focus();
-        $targetElem.hide();
+        $('nav .second-toggle-btn').hide();
       } else if ($form.is(':visible')) {
         $form.slideUp();
         $('#tweet-text').focus();
