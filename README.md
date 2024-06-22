@@ -31,5 +31,5 @@ Tweeter is a simple, single-page Twitter clone built with front-end skills of: H
 
 ## Stretch
 - Composing a Tweet Box can be toggled by clicking the `new` or `red-down-arrow` located on the top right
-- A `second toggle-button` appears at the bottom right of the window screen when user is able to scroll down. The second toggle-button lets users jump back to the top of page to start a new tweet
+- A `second toggle-button` appears at the bottom right of the window screen when users can scroll down. The second toggle-button lets users jump back to the top of page to start a new tweet
 - Added SASS as an extension to help write more organized and reusable code 
