@@ -15,12 +15,18 @@ $(() => {
   const newTweetEventHandler = ($targetElem) => {
     $($targetElem).on('click', (event) => {
       const $form = $('main.container .new-tweet');
-      if ($form.is(':visible')) {
-        $form.slideUp();
-      } else {
+      if ($targetElem === 'nav .second-toggle-btn'){
         $form.slideDown();
         $('#tweet-text').focus();
       }
+      else if ($form.is(':visible')) {
+        $form.slideUp();
+        $('#tweet-text').focus();
+      }else {
+        $form.slideDown();
+        $('#tweet-text').focus();
+      }
+      $('nav .second-toggle-btn').hide();
     });
   };
   
@@ -47,10 +53,18 @@ $(() => {
     $('textarea#tweet-text').val('');
   });
 
+  $(window).on('scroll', (event) => {
+    if (window.scrollY > 200){
+      $('nav .second-toggle-btn').show();
+    }
+  })
+
   //Direct user to textarea upon clicking 'new' btn or nav icon
   //Slide new-tweet up or down upon click
   newTweetEventHandler('nav .new-tweet .new-tweet-btn');
   newTweetEventHandler('nav .new-tweet i');
+  newTweetEventHandler('nav .second-toggle-btn');
+
 
   //============================================================================
   // Client Side JS
