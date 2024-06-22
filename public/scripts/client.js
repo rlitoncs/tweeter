@@ -15,14 +15,15 @@ $(() => {
   const newTweetEventHandler = ($targetElem) => {
     $($targetElem).on('click', (event) => {
       const $form = $('main.container .new-tweet');
-      if ($targetElem === 'nav .second-toggle-btn'){
+      if ($targetElem === 'nav .second-toggle-btn') {
+        $('html').scrollTop(0);
         $form.slideDown();
         $('#tweet-text').focus();
-      }
-      else if ($form.is(':visible')) {
+        $('nav .second-toggle-btn').hide();
+      } else if ($form.is(':visible')) {
         $form.slideUp();
         $('#tweet-text').focus();
-      }else {
+      } else {
         $form.slideDown();
         $('#tweet-text').focus();
       }
@@ -54,12 +55,12 @@ $(() => {
   });
 
   $(window).on('scroll', (event) => {
-    if (window.scrollY > 200){
+    if (window.scrollY > 200) {
       $('nav .second-toggle-btn').show();
     }
-  })
+  });
 
-  //Direct user to textarea upon clicking 'new' btn or nav icon
+  //Direct user to textarea upon clicking 'new' btn or nav icon or second toggle btn
   //Slide new-tweet up or down upon click
   newTweetEventHandler('nav .new-tweet .new-tweet-btn');
   newTweetEventHandler('nav .new-tweet i');
