@@ -35,6 +35,18 @@ nav {
     color: tomato;
     cursor: pointer;
   }
+
+  .new-tweet-btn{
+    background: transparent;
+    border: none;
+    padding: 0;
+    color: white;
+    cursor: pointer;
+  }
+
+  .new-tweet-btn:hover{
+    color: tomato;
+  }
 }
 
 
