@@ -35,7 +35,7 @@ $(() => {
     return $('textarea#tweet-text').val('');
   };
   
-  const clearTweetCounter = () => {
+  const resetTweetCounter = () => {
     $('.counter').text('140');
   };
 
@@ -172,7 +172,7 @@ $(() => {
     })
       .done(() => {
         clearTweetContent(); // clear textarea on tweet submission
-        clearTweetCounter(); // reset tweet character count on tweet submission
+        resetTweetCounter(); // reset tweet character count on tweet submission
         loadTweets(); //loadTweets after successful POST
       })
       .fail((err) => {
