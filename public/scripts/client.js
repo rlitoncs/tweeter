@@ -13,19 +13,16 @@ $(() => {
   //Direct user to textarea upon clicking 'new' btn or nav icon
   //Slide new-tweet up or down upon click
   const newTweetEventHandler = ($targetElem) => {
-    let $clicked = true;
     $($targetElem).on('click', (event) => {
-      if ($clicked){
-        $clicked = false;
-        $('main.container .new-tweet').slideDown();
-        $('#tweet-text').focus();
-      } else if (!$clicked) {
-        $clicked = true;
-        $('main.container .new-tweet').slideUp();
+      const $form = $('main.container .new-tweet');
+      if ($form.is(':visible')) {
+        $form.slideUp();
+      } else {
+        $form.slideDown();
         $('#tweet-text').focus();
       }
-    })
-  }
+    });
+  };
   
   const clearTweetContent = () => {
     return $('textarea#tweet-text').val('');
@@ -52,8 +49,8 @@ $(() => {
 
   //Direct user to textarea upon clicking 'new' btn or nav icon
   //Slide new-tweet up or down upon click
-  newTweetEventHandler('nav .new-tweet .new-tweet-btn'); 
-  newTweetEventHandler('nav .new-tweet i'); 
+  newTweetEventHandler('nav .new-tweet .new-tweet-btn');
+  newTweetEventHandler('nav .new-tweet i');
 
   //============================================================================
   // Client Side JS
